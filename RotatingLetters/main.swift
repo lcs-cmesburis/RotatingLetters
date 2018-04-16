@@ -7,11 +7,13 @@
 //
 
 import Foundation
+
+// loop forever until we get good input
+var validInput = "" // outside the loop -- we can use it later on AFTER
+
 prompt: while 1 == 1 {
     //INPUT
     
-    // loop forever until we get good input
-    var validInput = "" // outside the loop -- we can use it later on AFTER
     // Prompt the user
     print("Input word is?")
     
@@ -50,10 +52,24 @@ prompt: while 1 == 1 {
     break // quit the while loop and begin PROCESS section
     
     
-    // PROCESS
-    print(validInput)
+    
     
 }
-// OUTPUT
+// PROCESS
+print(validInput)
 
+for letters in validInput {
+    //Check each letter tp make sure it IHOSZXN
+    if letters == "I" || letters == "H" || letters == "O" || letters == "S" || letters == "X" || letters == "Z" || letters == "N" {
+        // good - keep  checking (continue loop)
+        continue
+    } else {
+        // We know the word doesn't work so say no and exit
+        print ("no")
+        exit(0)
+        //break //quit the program
+    }
+}
+//Output
+print("yes")
 
